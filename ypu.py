@@ -18,6 +18,8 @@ def f_y(y):
 
 
 def h_p(p):
+    #at first we will use mu* p
+    #todo implement function for h_p and a switch parameter
     pi = mu*p
     return pi
 
