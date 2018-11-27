@@ -21,12 +21,12 @@ rane = np.linspace(0, 5, 1000)
 if __name__ == '__main__':
     fig1 = plt.figure()
     sub1 = fig1.add_subplot(111)
-    sub1.plot(rane, n1(rane), label='n1')
-    sub1.plot(rane, n2(rane, 1), label='n2, $\lambda = 1$')
-    sub1.plot(rane, n2(rane, 2), label='n2, $\lambda = 2$')
-    sub1.plot(rane, n2(rane, 3), label='n2, $\lambda = 3$')
-    #sub1.plot(rane, [delta_x / beta for x in rane], ls='--', label='threshold for death')
-    sub1.plot(rane, [1 for x in rane], ls='--', label='threshold for death') # for better vis
+    sub1.plot(rane, n1(rane), label='n1', color='aqua')
+    sub1.plot(rane, n2(rane, 1), label='n2, $\lambda = 1$', color='#FF7256')
+    sub1.plot(rane, n2(rane, 2), label='n2, $\lambda = 2$', color='#EE6A50')
+    sub1.plot(rane, n2(rane, 3), label='n2, $\lambda = 3$', color='#CD5B45')
+    # sub1.plot(rane, [delta_x / beta for x in rane], ls='--', label='threshold for death')
+    sub1.plot(rane, [1 for x in rane], ls='--', label='threshold for death', color='aquamarine')  # for better vis
     sub1.set_xlabel('y')
     sub1.set_ylabel('p')
     sub1.set_ylim((0, 15))
@@ -37,7 +37,7 @@ if __name__ == '__main__':
 
     fig2 = plt.figure()
     sub21 = fig2.add_subplot(111)
-    sub21.plot(rane, [n1(x) if n1(x) >= 0 else 0 for x in rane ], label='n1')
+    sub21.plot(rane, [n1(x) if n1(x) >= 0 else 0 for x in rane], label='n1')
     sub21.plot(rane, np.zeros(len(rane)), label='n2, p=0')
     sub21.set_xlabel('y')
     sub21.set_ylabel('p')
@@ -46,4 +46,3 @@ if __name__ == '__main__':
     fig2.legend()
     fig2.tight_layout()
     fig2.savefig('phaseplot0.pdf')
-
