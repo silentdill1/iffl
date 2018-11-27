@@ -46,6 +46,6 @@ def f(t, x):
     yi, pi, ui = x
 
     dy = h_p(pi) + f_y(yi)
-    dp = pi * (delta_x + lambd - kappa * yi - beta * pi)
-    du = (lambd - kappa * yi) * ui
+    dp = pi * (delta_x + lambd - kappa*yi - beta*pi)
+    du = (lambd - kappa*yi) * ui
     return [dy, dp, du]
