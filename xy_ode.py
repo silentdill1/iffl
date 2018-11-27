@@ -12,16 +12,16 @@ t_event2 = 100
 
 def u1(t):
     if t < t_event1:
-        return 1
+        return 0
     else:
-        return 2
+        return 1
 
 
 def u2(t):
     if t < t_event2:
         return 0
     else:
-        return 1/2*t
+        return t-100
 
 
 def u3(t):
@@ -31,7 +31,7 @@ def u3(t):
         return np.exp(t)
 
 
-def deriv1(v, t):
+def deriv1(t, v):
     x = v[0]
     y = v[1]
     dv_dt = np.zeros(2)
@@ -40,7 +40,7 @@ def deriv1(v, t):
     return dv_dt
 
 
-def deriv2(v, t):
+def deriv2(t, v):
     x = v[0]
     y = v[1]
     dv_dt = np.zeros(2)
@@ -49,7 +49,7 @@ def deriv2(v, t):
     return dv_dt
 
 
-def deriv3(v, t):
+def deriv3(t, v):
     x = v[0]
     y = v[1]
     dv_dt = np.zeros(2)
@@ -59,3 +59,4 @@ def deriv3(v, t):
 
 
 derivatives = [deriv1, deriv2, deriv3]
+uFuns = [u1, u2, u3]
