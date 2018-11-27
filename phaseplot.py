@@ -8,6 +8,8 @@ from plot_ypu import f_y2
 def n1(y):
     return -f_y2(y) / mu
 
+def n1a(y):
+    return -f_y(y) / mu
 
 kappa = 1
 
