@@ -56,3 +56,6 @@ def deriv3(v, t):
     dv_dt[0] = -x * delta_x + beta * u3(t)
     dv_dt[1] = mu * u3(t) / x - delta_y * y
     return dv_dt
+
+
+derivatives = [deriv1, deriv2, deriv3]
