@@ -2,10 +2,10 @@
 import numpy as np
 from ypu_ode import *
 import matplotlib.pyplot as plt
-
+from plot_ypu import f_y2
 
 def n1(y):
-    return -f_y(y) / mu
+    return -f_y2(y) / mu
 
 
 def n2(y):
