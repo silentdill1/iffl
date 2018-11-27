@@ -4,7 +4,7 @@ from scipy.integrate import solve_ivp
 import numpy as np
 
 INITIAL_VALUES = np.array([0.0001, 0])
-NUMBER_OF_POINTS = 500
+NUMBER_OF_POINTS = 600
 TIME_FRAME1 = (0.0, 10.0)
 TIME_FRAME2 = (0.0, 200.0)
 
@@ -37,8 +37,8 @@ def plot_ode(deriv, time_frame, sub_plots, u_func):
 
 
 fig, plots = plt.subplots(nrows=3, ncols=1, sharex=True, sharey=False, figsize=(6, 6))
-plot_ode(derivatives[0], TIME_FRAME1, plots, uFuns[0])  # step function
+# plot_ode(derivatives[0], TIME_FRAME1, plots, uFuns[0])  # step function
 # plot_ode(derivatives[1], TIME_FRAME2, plots, uFuns[1])  # linear
-# plot_ode(derivatives[2], TIME_FRAME1, plots, uFuns[2])  # exponential
+plot_ode(derivatives[2], TIME_FRAME1, plots, uFuns[2])  # exponential
 fig.savefig('xxx')
 plt.show()

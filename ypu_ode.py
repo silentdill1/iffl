@@ -21,7 +21,7 @@ x0 = [y0, p0, u0]
 
 def f_y(y):
     """
-    autocatalysis term, function from paper
+    autocatalysis and decay term, function from paper
     :param y:
     :return:
     """
