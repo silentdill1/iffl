@@ -47,10 +47,10 @@ if __name__ == '__main__':
     sub21.plot(2, 0, 'o', color='red')
     sub21.plot(2, 0, '.', color='white')
     # for quiver
-    # xsmall = 0
-    # xbig = 5.3
-    # ysmall = -0.5
-    # ybig = 8
+    xsmall = 0
+    xbig = 5.3
+    ysmall = -0.5
+    ybig = 8
     # x = np.linspace(xsmall, xbig, 30)
     # z = np.linspace(ysmall, ybig, 30)
     # u = mu*z + f_y2(x)
