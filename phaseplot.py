@@ -2,7 +2,7 @@
 import numpy as np
 from ypu_ode import *
 import matplotlib.pyplot as plt
-from plot_ypu import f_y2
+from fy_plot import f_y2
 
 
 def n1(y):
