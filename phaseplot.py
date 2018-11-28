@@ -42,7 +42,7 @@ if __name__ == '__main__':
     fig2 = plt.figure()
     sub21 = fig2.add_subplot(111)
     sub21.plot(rane, [n1(x) if n1(x) >= 0 else 0 for x in rane], label='n1')
-    sub21.plot(rane, np.zeros(len(rane)), label='n2, p=0', color='#CD5B45')
+    sub21.plot(rane, np.zeros(len(rane)), label='N_{2a}, p=0', color='#CD5B45')
     sub21.plot([0, 4], [0, 0], 'o', color='green', clip_on=False)
     sub21.plot(2, 0, 'o', color='red')
     sub21.plot(2, 0, '.', color='white')
