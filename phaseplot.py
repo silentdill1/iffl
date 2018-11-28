@@ -46,10 +46,20 @@ if __name__ == '__main__':
     sub21.plot([0, 4], [0, 0], 'o', color='green', clip_on=False)
     sub21.plot(2, 0, 'o', color='red')
     sub21.plot(2, 0, '.', color='white')
+    # for quiver
+    # xsmall = 0
+    # xbig = 5.3
+    # ysmall = -0.5
+    # ybig = 8
+    # x = np.linspace(xsmall, xbig, 30)
+    # z = np.linspace(ysmall, ybig, 30)
+    # u = mu*z + f_y2(x)
+    # v = z*(delta_x+lambd-kappa*x-beta*z)
+    # sub21.quiver(x, z, u, v)
     sub21.set_xlabel('y')
     sub21.set_ylabel('p')
-    sub21.set_ylim((-0.5, 8))
-    sub21.set_xlim((0, 5.3))
-    fig2.legend(loc="best")
+    sub21.set_ylim((ysmall, ybig))
+    sub21.set_xlim((xsmall, xbig))
+    fig2.legend()
     fig2.tight_layout()
     fig2.savefig('phaseplot0.pdf')
