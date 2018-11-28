@@ -42,20 +42,21 @@ if __name__ == '__main__':
     fig2 = plt.figure()
     sub21 = fig2.add_subplot(111)
     sub21.plot(rane, [n1(x) if n1(x) >= 0 else 0 for x in rane], label='n1')
-    sub21.plot(rane, np.zeros(len(rane)), label='n2, p=0', color='#CD5B45')
+    sub21.plot(rane, np.zeros(len(rane)), label='N_{2a}, p=0', color='#CD5B45')
     sub21.plot([0, 4], [0, 0], 'o', color='green', clip_on=False)
     sub21.plot(2, 0, 'o', color='red')
     sub21.plot(2, 0, '.', color='white')
     # for quiver
     xsmall = 0
-    xbig = 5.3
+    xbig = 4.5
     ysmall = -0.5
-    ybig = 8
-    # x = np.linspace(xsmall, xbig, 30)
+    ybig = 5
+    # x = np.linspace(0, xbig, 30)
     # z = np.linspace(ysmall, ybig, 30)
-    # u = mu*z + f_y2(x)
-    # v = z*(delta_x+lambd-kappa*x-beta*z)
-    # sub21.quiver(x, z, u, v)
+    # X, Z = np.meshgrid(x, z)
+    # u = mu*Z + f_y2(X)
+    # v = Z*(delta_x+lambd-kappa*X-beta*Z)
+    # sub21.quiver(X, Z, u, v)
     sub21.set_xlabel('y')
     sub21.set_ylabel('p')
     sub21.set_ylim((ysmall, ybig))
