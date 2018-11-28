@@ -12,23 +12,23 @@ t_event2 = 100
 
 def u1(t):
     if t < t_event1:
-        return 0
-    else:
         return 1
+    else:
+        return 2
 
 
 def u2(t):
     if t < t_event2:
-        return 0
+        return 1
     else:
-        return t-100
+        return 1+t-t_event2
 
 
 def u3(t):
     if t < t_event1:
-        return 0
+        return 1
     else:
-        return np.exp(t)
+        return np.exp(t-t_event1)
 
 
 def deriv1(t, v):
