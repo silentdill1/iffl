@@ -27,21 +27,23 @@ def plot_func(func, time_frame, sub_plot, title='_nolegend_'):
     time_points = np.linspace(time_frame[0], time_frame[1], NUMBER_OF_POINTS)
     values = [func(t) for t in time_points]
     return sub_plot.plot(time_points, values, label=title, color=(greyCount, greyCount, greyCount))
+    # return sub_plot.plot(time_points, values, label=title)
 
 
 if __name__ == '__main__':
     fig = plt.figure()
     plot = fig.add_subplot(111)
-    for h in [30, H_KRIT2, 0]:
+    for h in [0]:  # 30, H_KRIT2,
         plot_func(lambda y: f_y2(y) + h, (0, 4.5), plot)  # title='h = '+str(round(h)
     line = plot_func(lambda y: 0, (0, 5), plot)
     plt.setp(line, color='#000000', linewidth=0.7)
-    plot.set_ylabel('f(y) + h [a.u.]')
+    plot.set_ylabel('f(y) [a.u.]')
     plot.set_xlabel('y [a.u.]')
     r1 = [[0, 's'], [1.984, 'i'], [4, 's']]
     r2 = [[0.67, 'i'], [4.205, 's']]
     r3 = [[4.32, 's']]
-    r = [r1, r2, r3]
+    # r = [r1, r2, r3]
+    r = [r1]
     init = [True, True]
     for ri in r:
         for x0 in ri:
@@ -61,6 +63,6 @@ if __name__ == '__main__':
                     plot.plot(x0[0], 0, '.', color='w', label='_nolegend_')
     fig.legend(bbox_to_anchor=(0.5, 0.35),
                bbox_transform=plt.gcf().transFigure)
-    fig.savefig('xxx')
+    fig.savefig('fy_ss')
     plt.show()
 

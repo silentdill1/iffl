@@ -34,8 +34,6 @@ def plot_ode(deriv, time_frame, sub_plots, u_func):
                 sub_plot.set_title('y')
 
 
-
-
 fig, plots = plt.subplots(nrows=3, ncols=1, sharex=True, sharey=False, figsize=(6, 6))
 plot_ode(derivatives[0], TIME_FRAME1, plots, uFuns[0])  # step function
 # plot_ode(derivatives[1], TIME_FRAME2, plots, uFuns[1])  # linear
