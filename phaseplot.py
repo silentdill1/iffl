@@ -48,14 +48,15 @@ if __name__ == '__main__':
     sub21.plot(2, 0, '.', color='white')
     # for quiver
     xsmall = 0
-    xbig = 5.3
+    xbig = 4.5
     ysmall = -0.5
-    ybig = 8
-    # x = np.linspace(xsmall, xbig, 30)
+    ybig = 5
+    # x = np.linspace(0, xbig, 30)
     # z = np.linspace(ysmall, ybig, 30)
-    # u = mu*z + f_y2(x)
-    # v = z*(delta_x+lambd-kappa*x-beta*z)
-    # sub21.quiver(x, z, u, v)
+    # X, Z = np.meshgrid(x, z)
+    # u = mu*Z + f_y2(X)
+    # v = Z*(delta_x+lambd-kappa*X-beta*Z)
+    # sub21.quiver(X, Z, u, v)
     sub21.set_xlabel('y')
     sub21.set_ylabel('p')
     sub21.set_ylim((ysmall, ybig))
