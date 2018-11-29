@@ -25,4 +25,4 @@ sub1.set_xscale('log')
 sub1.set_yscale('log')
 
 fig1.legend()
-fig1.savefig('fourphaseplot.pdf')
+fig1.savefig('fourphaseplot.png')

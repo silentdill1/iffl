@@ -4,7 +4,7 @@ from ypu_ode import *
 import matplotlib.pyplot as plt
 from fy_plot import f_y2
 
-
+plt.rcParams.update({'axes.labelsize': 'small'})
 def n1(y):
     return -f_y2(y) / mu
 
@@ -16,19 +16,21 @@ def n1a(y):
 kappa = 1
 
 
-def n2(y, lambd=1):
+def n2(y, lambd=1.):
     n = 1 / beta * (delta_x + lambd - kappa * y)
     return n
 
 
 rane = np.linspace(0, 5, 1000)
 if __name__ == '__main__':
+    #full fig
     fig1 = plt.figure()
     sub1 = fig1.add_subplot(111)
-    sub1.plot(rane, n1(rane), label='$N_1', color='aqua')
-    sub1.plot(rane, n2(rane, 1), label='$N_{2b}$, $\lambda = 1$', color='#FF7256')
+    sub1.plot(rane, n1(rane), label='$N_1$', color='aqua')
+    sub1.plot(rane, n2(rane, 0.5), label='$N_{2b}$, $\lambda = 0.5$', color='#FF7256')
     sub1.plot(rane, n2(rane, 2), label='$N_{2b}$, $\lambda = 2$', color='#EE6A50')
     sub1.plot(rane, n2(rane, 3), label='$N_{2b}$, $\lambda = 3$', color='#CD5B45')
+    sub1.plot(rane, n2(rane, 6), label='$N_{2b}$, $\lambda = 6$', color='brown')
     # sub1.plot(rane, [delta_x / beta for x in rane], ls='--', label='threshold for death')
     sub1.plot(rane, [1 for x in rane], ls='--', label='threshold for death', color='aquamarine')  # for better vis
     sub1.set_xlabel('y')
@@ -37,11 +39,12 @@ if __name__ == '__main__':
     sub1.set_xlim((0, 5.3))
     fig1.legend()
     fig1.tight_layout()
-    fig1.savefig('phaseplotpnot0.png')
+    fig1.savefig('phaseplotpnot0.png', dpi=900)
 
+    #for p = 0
     fig2 = plt.figure()
     sub21 = fig2.add_subplot(111)
-    sub21.plot(rane, [n1(x) if n1(x) >= 0 else 0 for x in rane], label='$N_1$')
+    sub21.plot(rane, [n1(x) if n1(x) >= 0 else 0 for x in rane], label=r'$N_1$')
     sub21.plot(rane, np.zeros(len(rane)), label=r'$N_{2a}$, p=0', color='#CD5B45')
     sub21.plot([0, 4], [0, 0], 'o', color='green', clip_on=False)
     sub21.plot(2, 0, 'o', color='red')
@@ -63,4 +66,4 @@ if __name__ == '__main__':
     sub21.set_xlim((xsmall, xbig))
     fig2.legend()
     fig2.tight_layout()
-    fig2.savefig('phaseplot0.png')
+    fig2.savefig('phaseplot0.png', dpi=900)
