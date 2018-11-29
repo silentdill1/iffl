@@ -2,7 +2,7 @@ import numpy as np
 
 # params - cell pops in 10^6 cells
 # /day
-lambd = 0.09  # /day
+lambde = 0.09  # /day
 delta_x = 0.1  # /day
 delta_y = 0.1  # /day
 beta = 1  # /day
@@ -35,14 +35,16 @@ def h_p(p, q):
     return pi
 
 
-def f(t, n):
+def f(t, n, lambd=lambde):
     """
     our differential equations (3a-c in the paper)
 
     :param t: time
     :param x: state vector at time t
+    :param lambd: u growth rate
     :return: dx as list
     """
+
     xi, yi, ui = n
 
     dx = -xi*delta_x + beta*ui
