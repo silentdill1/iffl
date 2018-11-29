@@ -31,6 +31,13 @@ def u3(t):
         return np.exp(t-t_event1)
 
 
+def u4(t):
+    if t < t_event1:
+        return 2
+    else:
+        return 4
+
+
 def deriv1(t, v):
     x = v[0]
     y = v[1]
@@ -58,5 +65,14 @@ def deriv3(t, v):
     return dv_dt
 
 
-derivatives = [deriv1, deriv2, deriv3]
-uFuns = [u1, u2, u3]
+def deriv4(t, v):
+    x = v[0]
+    y = v[1]
+    dv_dt = np.zeros(2)
+    dv_dt[0] = -x * delta_x + beta * u4(t)
+    dv_dt[1] = mu * u4(t) / x - delta_y * y
+    return dv_dt
+
+
+derivatives = [deriv1, deriv2, deriv3, deriv4]
+uFuns = [u1, u2, u3, u4]
