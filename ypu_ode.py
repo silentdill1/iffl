@@ -2,7 +2,7 @@ import numpy as np
 
 # params - cell pops in 10^6 cells
 # /day
-lambd = 1  # /day
+lambd = 10**(-6)  # /day
 delta_x = 0.1  # /day
 delta_y = 0.1  # /day
 beta = 1  # /day
@@ -13,8 +13,8 @@ K = 100  # * unit cells
 epsilon = 10 ** (-5)  # /(day*unit cells)
 
 # initial vals
-y0 = 0
-p0 = 0
+y0 = 1
+p0 = 1
 u0 = 1
 x0 = [y0, p0, u0]
 
